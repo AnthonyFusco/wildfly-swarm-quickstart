@@ -6,13 +6,13 @@ this repository has the purpose to enable a quick start on an J2EE project that 
 
 ### REST Endpoints
 
-Add REST endpoints in src/main/java/com/st/pccwildfly/rest, it uses the common JAX-RS API.
+Add REST endpoints in src/main/java/com/st/demo/rest, it uses the common JAX-RS API.
 
 All new endpoints will be registered at the root http://localhost:8080/api/
 
 ### EJB
 
-The EJBs are located in src/main/java/com/st/pccwildfly/ejb.
+The EJBs are located in src/main/java/com/st/demo/ejb.
 
 ### JPA
 
