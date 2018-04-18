@@ -15,6 +15,10 @@ public class ClientRepositoryBean implements Serializable {
     @PersistenceContext(unitName = "MyPU")
     private EntityManager entityManager;
 
+    public void addClient(String name) {
+        entityManager.persist(new Client(name));
+    }
+
     public List<Client> getClients() {
         return entityManager.createNamedQuery("Client.findAll", Client.class).getResultList();
     }

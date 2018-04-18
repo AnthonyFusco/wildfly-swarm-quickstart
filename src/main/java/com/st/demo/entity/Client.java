@@ -16,7 +16,7 @@ import java.io.Serializable;
 })
 public class Client implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
     private String name;
@@ -24,8 +24,7 @@ public class Client implements Serializable {
     public Client() {
     }
 
-    public Client(int id, String name) {
-        this.id = id;
+    public Client(String name) {
         this.name = name;
     }
 
