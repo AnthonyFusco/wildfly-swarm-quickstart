@@ -29,7 +29,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>pccwildfly</finalName>
+        <finalName>demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.wildfly.swarm</groupId>
@@ -52,6 +52,11 @@
             <artifactId>h2</artifactId>
             <version>1.4.187</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<version>5.1.38</version>-->
+        <!--</dependency>-->
         <!-- Java EE 7 dependency -->
         <dependency>
             <groupId>javax</groupId>
@@ -71,6 +76,10 @@
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wildfly.swarm</groupId>
+            <artifactId>datasources</artifactId>
         </dependency>
     </dependencies>
 </project>

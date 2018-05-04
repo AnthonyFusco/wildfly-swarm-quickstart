@@ -7,6 +7,8 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Named
@@ -16,7 +18,7 @@ public class ClientRepositoryBean implements Serializable {
     private EntityManager entityManager;
 
     public void addClient(String name) {
-        entityManager.persist(new Client(name));
+        entityManager.persist(new Client(name, Arrays.asList("quilles finlandaises", "java")));
     }
 
     public List<Client> getClients() {

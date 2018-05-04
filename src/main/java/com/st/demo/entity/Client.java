@@ -1,6 +1,7 @@
 package com.st.demo.entity;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import static javax.persistence.FetchType.EAGER;
 
 @Entity
 @NamedQueries({
@@ -20,12 +25,15 @@ public class Client implements Serializable {
     private int id;
     @Column
     private String name;
+    @ElementCollection(fetch=EAGER)
+    private List<String> hobbies = new ArrayList<>();
 
     public Client() {
     }
 
-    public Client(String name) {
+    public Client(String name, List<String> hobbies) {
         this.name = name;
+        this.hobbies = hobbies;
     }
 
     public int getId() {
@@ -44,26 +52,20 @@ public class Client implements Serializable {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Client client = (Client) o;
-
-        return id == client.id;
+    public List<String> getHobbies() {
+        return hobbies;
     }
 
-    @Override
-    public int hashCode() {
-        return id;
+    public void setHobbies(List<String> hobbies) {
+        this.hobbies = hobbies;
     }
 
     @Override
     public String toString() {
         return "Client{" +
                 "id=" + id +
-                ", name=" + name +
+                ", name='" + name + '\'' +
+                ", hobbies=" + hobbies +
                 '}';
     }
 }
